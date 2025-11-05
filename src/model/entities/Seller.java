@@ -26,6 +26,7 @@ public class Seller implements Serializable {
         this.email = email;
         this.birthDate = birthDate;
         this.baseSalary = baseSalary;
+        this.department = department;
     }
 
     public Date getBirthDate() {
