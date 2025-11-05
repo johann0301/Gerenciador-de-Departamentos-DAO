@@ -12,7 +12,7 @@ public class Seller implements Serializable {
     private String name;
     private String email;
     private Date birthDate;
-    private Double salary;
+    private Double baseSalary;
 
     private Department department;
 
@@ -20,12 +20,12 @@ public class Seller implements Serializable {
 
     }
 
-    public Seller(Integer id,  String name, String email, Date birthDate, Double salary, Department department) {
+    public Seller(Integer id, String name, String email, Date birthDate, Double baseSalary, Department department) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.birthDate = birthDate;
-        this.salary = salary;
+        this.baseSalary = baseSalary;
     }
 
     public Date getBirthDate() {
@@ -68,23 +68,23 @@ public class Seller implements Serializable {
         this.name = name;
     }
 
-    public Double getSalary() {
-        return salary;
+    public Double getBaseSalary() {
+        return baseSalary;
     }
 
-    public void setSalary(Double salary) {
-        this.salary = salary;
+    public void setBaseSalary(Double baseSalary) {
+        this.baseSalary = baseSalary;
     }
 
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof Seller seller)) return false;
-        return Objects.equals(id, seller.id) && Objects.equals(name, seller.name) && Objects.equals(email, seller.email) && Objects.equals(birthDate, seller.birthDate) && Objects.equals(salary, seller.salary) && Objects.equals(department, seller.department);
+        return Objects.equals(id, seller.id) && Objects.equals(name, seller.name) && Objects.equals(email, seller.email) && Objects.equals(birthDate, seller.birthDate) && Objects.equals(baseSalary, seller.baseSalary) && Objects.equals(department, seller.department);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, email, birthDate, salary, department);
+        return Objects.hash(id, name, email, birthDate, baseSalary, department);
     }
 
     @Override
@@ -94,7 +94,7 @@ public class Seller implements Serializable {
                 ", id=" + id +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
-                ", salary=" + salary +
+                ", salary=" + baseSalary +
                 ", department=" + department +
                 '}';
     }
