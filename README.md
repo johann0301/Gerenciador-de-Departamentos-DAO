@@ -6,13 +6,6 @@ A complete desktop application built in Java for managing company departments an
 
 ---
 
-## 🎥 Live Demo
-
-*(This is a great place to insert your screen-recorded GIF or a short video!)*
-`[Insert your .gif or .mp4 here]`
-
----
-
 ## ✨ Key Features
 
 * **Department Management:**
