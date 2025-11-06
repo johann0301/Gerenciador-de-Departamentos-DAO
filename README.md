@@ -67,6 +67,40 @@ This project was built with a strong **Separation of Concerns** in mind:
 To run this project, you will need **IntelliJ IDEA** (or another Java IDE) and **MySQL Server**.
 
 **1. Clone the Repository:**
-```bash
+bash
 git clone [YOUR-GITHUB-REPOSITORY-URL-HERE]
 cd project-name
+
+**2. Set up the Database:**
+* Open your MySQL client (Workbench, etc.).
+* Run the `database.sql` script (or your named SQL file) located in the root of this project. This will create the required `department` and `seller` tables.
+
+**3. Open in IntelliJ:**
+* Open the project folder in IntelliJ IDEA.
+* Add the required libraries to the project:
+    * The **MySQL Connector/J** (`.jar` file).
+    * The **JavaFX SDK** (v17+).
+    * *IntelliJ Path:* `File` > `Project Structure...` > `Libraries` > `+` > `Java`.
+
+**4. Configure `db.properties`:**
+* Navigate to `src/db.properties`.
+* Change the `db.url`, `db.user`, and `db.password` lines to match your local MySQL credentials.
+    ```properties
+    db.url=jdbc:mysql://localhost:3306/your_database_name
+    db.user=your_user
+    db.password=your_password
+    ```
+
+**5. (CRITICAL) Set JavaFX VM Options:**
+* In IntelliJ, go to `Run` > `Edit Configurations...`.
+* Click `+` and add a new `Application`.
+* Name it "Run App".
+* For **`Main class`**, select `application.Main`.
+* Click `Modify options` > `Add VM options`.
+* In the `VM options` field, paste the following line (adjust the path to your JavaFX SDK):
+    ```
+    --module-path "C:\path\to\your\javafx-sdk-21.0.9\lib" --add-modules javafx.controls,javafx.fxml
+    ```
+
+**6. Run!**
+* Click the "Play" (▶️) button next to your "Run App" configuration.
